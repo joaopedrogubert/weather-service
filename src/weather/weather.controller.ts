@@ -9,7 +9,7 @@ export class WeatherController {
   constructor(private weatherService: WeatherService) {}
 
   @Get('/:city')
-  getPrevisaoByCity(@Param('city') city: string): Promise<Weather> {
+  async getPrevisaoByCity(@Param('city') city: string): Promise<Weather> {
     return this.weatherService.getPrevisaoByCity(city);
   }
 }
